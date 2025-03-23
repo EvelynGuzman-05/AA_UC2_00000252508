@@ -5,6 +5,7 @@
 package mx.itson.aa_uc_252508.main;
 
 import static mx.itson.aa_uc_252508.algoritmos.Ordenamientos.burbuja;
+import static mx.itson.aa_uc_252508.algoritmos.Ordenamientos.insercion;
 
 /**
  *
@@ -13,9 +14,13 @@ import static mx.itson.aa_uc_252508.algoritmos.Ordenamientos.burbuja;
 public class Pruebas {
     
     public static void main(String[] args) {
-        int[] arreglo = {5, 3, 8, 1}; // Arreglo 
-        int[] resultado = burbuja(arreglo); // Llamar al método
-        System.out.print("Arreglo ordenado(Método burbuja): ");
-        System.out.println(java.util.Arrays.toString(resultado));
+        int[] a = {5, 3, 8, 1}; // Arreglo 
+        System.out.print("Arreglo ordenado (Método burbuja): ");
+        System.out.println(java.util.Arrays.toString(burbuja(a))); // Llamar al método burbuja
+
+        System.out.print("Arreglo ordenado (Método inserción): ");
+        System.out.println(java.util.Arrays.toString(insercion(a))); // Llamar al método inserción
+        
+        
     }
 }
