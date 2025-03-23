@@ -14,12 +14,17 @@ import static mx.itson.aa_uc_252508.algoritmos.Ordenamientos.insercion;
 public class Pruebas {
     
     public static void main(String[] args) {
-        int[] a = {5, 3, 8, 1}; // Arreglo 
+        int[] a = {5, 3, 8, 1}; // Arreglo original
+        
+        // Llamar al método burbuja
+        int[] copiaBurbuja = a.clone(); // Crea una clonación del arreglo original
         System.out.print("Arreglo ordenado (Método burbuja): ");
-        System.out.println(java.util.Arrays.toString(burbuja(a))); // Llamar al método burbuja
+        System.out.println(java.util.Arrays.toString(burbuja(copiaBurbuja))); 
 
+        // Llamar al método inserción
+        int[] copiaInsercion = a.clone(); // Crea una clonación del arreglo original
         System.out.print("Arreglo ordenado (Método inserción): ");
-        System.out.println(java.util.Arrays.toString(insercion(a))); // Llamar al método inserción
+        System.out.println(java.util.Arrays.toString(insercion(copiaInsercion))); 
         
         
     }
