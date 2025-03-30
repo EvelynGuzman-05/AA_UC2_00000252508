@@ -56,6 +56,33 @@ public class Ordenamientos {
     } // 3n² + 6n + 1 ---> O(n²)
     
     
+    /**
+     * Método para el ordenamiento de selección
+     * @param a Arreglo de enteros
+     * @return Arreglo de enteros ordenado
+     */
+    public static int[] seleccion(int[] a) {
+    int n = a.length; // 1
+
+    for (int i = 0; i < n - 1; i++) { // 1 + (n-1) + (n-1) --> 2n - 1
+        int minIndex = i; // 1
+
+        for (int j = i + 1; j < n; j++) { // n + n² + n²--> 2n² + n
+            if (a[j] < a[minIndex]) { // n²
+                minIndex = j; // n²
+            }
+        }
+
+        // Intercambio de elementos
+        int aux = a[minIndex]; // n
+        a[minIndex] = a[i]; // n
+        a[i] = aux; // n
+        }
+        return a; // 1
+    
+    } // 4n² + 6n + 2 ---> O(n²)
+
+
     
     
     
