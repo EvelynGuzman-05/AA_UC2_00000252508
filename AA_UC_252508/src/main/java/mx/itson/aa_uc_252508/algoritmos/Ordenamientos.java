@@ -84,6 +84,40 @@ public class Ordenamientos {
 
 
     
+    /**
+     * Método para el ordenamiento QuickSort
+     * @param a Arreglo de enteros
+     * @param desde Índice inicial del subarreglo a ordenar.
+     * @param hasta Índice final del subarreglo a ordenar.
+     */
+    public static void quicksort(int[] a, int desde, int hasta) {
+    if (desde < hasta) {  // 1
+        int indicePivote = particionar(a, desde, hasta);  // f(n)
+        quicksort(a, desde, indicePivote - 1);  // T(n-1)
+        quicksort(a, indicePivote + 1, hasta);  // No entra en el peor de los caso (lista vacía)
+    }
+    } // 5n² + n / 2 + O(1) --> O(n²)
+
+    private static int particionar(int[] arreglo, int desde, int hasta) {
+    int pivote = arreglo[hasta]; // 1
+    int i = desde - 1; // 1
+
+    for (int j = desde; j < hasta; j++) { // 1 + (n-1) + (n-1) ---> 2n - 1
+        if (arreglo[j] < pivote) { // n - 1
+            i++; // n - 1
+            int aux = arreglo[i]; // n - 1
+            arreglo[i] = arreglo[j]; // n - 1
+            arreglo[j] = aux; // n - 1
+        }
+    }
+
+    int aux = arreglo[i + 1]; // 1
+    arreglo[i + 1] = arreglo[hasta]; // 1
+    arreglo[hasta] = aux; // 1
+
+    return i + 1; // 1
+    } // 6n + 10 --> O(n)
+
     
     
     
