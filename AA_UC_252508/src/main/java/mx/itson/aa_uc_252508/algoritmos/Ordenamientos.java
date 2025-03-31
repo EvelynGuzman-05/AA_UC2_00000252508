@@ -90,12 +90,13 @@ public class Ordenamientos {
      * @param desde Índice inicial del subarreglo a ordenar.
      * @param hasta Índice final del subarreglo a ordenar.
      */
-    public static void quicksort(int[] a, int desde, int hasta) {
+    public static int[] quicksort(int[] a, int desde, int hasta) {
     if (desde < hasta) {  // 1
         int indicePivote = particionar(a, desde, hasta);  // f(n)
         quicksort(a, desde, indicePivote - 1);  // T(n-1)
         quicksort(a, indicePivote + 1, hasta);  // No entra en el peor de los caso (lista vacía)
     }
+    return a;
     } // 5n² + n / 2 + O(1) --> O(n²)
 
     private static int particionar(int[] arreglo, int desde, int hasta) {
